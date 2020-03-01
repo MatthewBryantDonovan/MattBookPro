@@ -5,27 +5,25 @@ import "./style.css";
 function NavBar(props) {
 
   return     <nav className="">
-  <Link className="" to="/">
+    <div className="nav-wrapper">
+    <Link className="brand-logo" to="/">
     Matt Books Pro
   </Link>
-  <div>
-    <ul className="">
-      <li className="">
-        <Link to="/" onClick={() => props.currentPageChange("/")} className={
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
+        <li><Link to="/" onClick={() => props.currentPageChange("/")} className={
           (props.currentPage === "/" || props.currentPage === "/search")
               ? "nav-link active"
               : "nav-link"  
           }
-        >Search </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/saved" onClick={() => props.currentPageChange("/saved")} className={
+        >Search </Link></li>
+        <li>        <Link to="/saved" onClick={() => props.currentPageChange("/saved")} className={
           props.currentPage === "/saved" ? "nav-link active" : "nav-link"}
-        > Saved </Link>
-      </li>
-    </ul>
-  </div>
-</nav>;
+        > Saved </Link></li>
+      </ul>
+    </div>
+  </nav>
+
+
 
 }
 

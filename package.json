@@ -1,0 +1,38 @@
+{
+  "name": "mattbookpro",
+  "version": "1.0.0",
+  "description": "Matt Book Pro Server",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd mattbookpro_app && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd mattbookpro_app && npm install",
+    "build": "cd mattbookpro_app && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewBryantDonovan/MattBookPro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewBryantDonovan/MattBookPro/issues"
+  },
+  "homepage": "https://github.com/MatthewBryantDonovan/MattBookPro#readme"
+}

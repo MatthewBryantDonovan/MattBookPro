@@ -1,8 +1,8 @@
 import React from "react";
 
-function SearchResults(props) {
+function SearchResults({ children }) {
 
-  return <div></div>;
+  return <div><h1>Results</h1>{ children }</div>;
 }
 
 export default SearchResults;
