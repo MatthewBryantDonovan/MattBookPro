@@ -1,3 +1,21 @@
 .active {
     font-weight: bolder;
 }
+
+#brand-logo-title{
+    font-size: 1.75em;
+    left: 45.25%;
+}
+
+@media only screen and (max-width: 992px) {
+    #brand-logo-title {
+        left: 50%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #brand-logo-title {
+        left: 22.50%;
+        font-size: 1.5em;
+    }
+}

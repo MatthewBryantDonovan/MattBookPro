@@ -5,11 +5,11 @@ import "./style.css";
 function NavBar(props) {
 
   return     <nav className="">
-    <div className="nav-wrapper">
-    <Link className="brand-logo" to="/">
+    <div className="nav-wrapper teal">
+    <Link id="brand-logo-title" className="brand-logo" to="/">
     Matt Books Pro
   </Link>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
+      <ul id="nav-mobile" className="right">
         <li><Link to="/" onClick={() => props.currentPageChange("/")} className={
           (props.currentPage === "/" || props.currentPage === "/search")
               ? "nav-link active"

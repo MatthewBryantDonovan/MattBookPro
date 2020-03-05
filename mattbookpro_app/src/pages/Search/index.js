@@ -3,6 +3,8 @@ import SearchTitle from "../../components/SearchTitle";
 import SearchResults from "../../components/SearchResults";
 import SearchBar from "../../components/SearchBar";
 import SearchItem from "../../components/SearchItem";
+import Container from "../../components/Container";
+import Row from "../../components/Row";
 import { Input, FormBtn } from "../../components/SearchForm";
 import API from "../../utils/API"
 
@@ -62,41 +64,58 @@ class Search extends React.Component {
 
   render() { 
     return <div>
-      <SearchTitle />
-      <SearchBar>
-        <Input 
-          value={this.state.name}
-          onChange={this.handleInputChange}
-          name="name"
-          placeholder="Book Name"
-        />
-        <FormBtn
-          disabled={!(this.state.name)}
-          onClick={this.handleFormSubmit}
-        >
-          Search for Books
-        </FormBtn>
-      </SearchBar>
-      <SearchResults>
-        {
-        (!this.state.error) ? 
-          ((this.state.books.length > 0) ? 
-            (this.state.books.map(book => (
-            <SearchItem 
-            key={book.link}
-            title={book.title}
-            authors={book.authors}
-            description={book.description}
-            image={book.image}
-            link={book.link}
-            book={book}
-            saveBook={this.saveBook}
-            />))) :
-            (<p>Please Search for books above</p>))
-          : 
-          (<p>That search didn't have any results!</p>)
-        }
-      </SearchResults>
+      <Container>
+        <Row>
+          <SearchTitle />
+        </Row>
+      </Container>
+
+      <Container>
+        <Row>
+          <SearchBar>
+            <Input 
+              value={this.state.name}
+              onChange={this.handleInputChange}
+              name="name"
+              placeholder="Book Name"
+            />
+            <FormBtn
+              disabled={!(this.state.name)}
+              onClick={this.handleFormSubmit}
+            >
+              Search for Books
+            </FormBtn>
+          </SearchBar>
+        </Row>
+      </Container>
+
+      <Container>
+        <SearchResults>
+          {
+          (!this.state.error) ? 
+            ((this.state.books.length > 0) ? 
+              (this.state.books.map(book => (
+                <Container>
+                  <Row>
+                    <SearchItem 
+                    key={book.link}
+                    title={book.title}
+                    authors={book.authors}
+                    description={book.description}
+                    image={book.image}
+                    link={book.link}
+                    book={book}
+                    saveBook={this.saveBook}
+                    />
+                  </Row>
+                </Container>
+              ))) :
+              (<p className="col s12 teal-text text-darken-3 center">Please Search for books above</p>))
+            : 
+            (<p className="col s12 teal-text text-darken-3 center">That search didn't have any results!</p>)
+          }
+        </SearchResults>
+      </Container>
     </div>;
   }
 }
