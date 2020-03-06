@@ -4,7 +4,8 @@ import SavedBody from "../../components/SavedBody";
 import SavedItem from "../../components/SavedItem";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
-import API from "../../utils/API"
+import API from "../../utils/API";
+import "./style.css";
 
 class Saved extends React.Component {
 
@@ -63,6 +64,7 @@ class Saved extends React.Component {
           </SavedBody>
         </Row>
       </Container>
+      <div className="bottom-space"></div>
     </div>;
   }
 }

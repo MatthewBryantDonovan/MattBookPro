@@ -6,7 +6,8 @@ import SearchItem from "../../components/SearchItem";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import { Input, FormBtn } from "../../components/SearchForm";
-import API from "../../utils/API"
+import API from "../../utils/API";
+import "./style.css";
 
 class Search extends React.Component {
 
@@ -116,6 +117,7 @@ class Search extends React.Component {
           }
         </SearchResults>
       </Container>
+      <div className="bottom-space"></div>
     </div>;
   }
 }
