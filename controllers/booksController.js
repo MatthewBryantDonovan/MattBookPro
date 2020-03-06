@@ -53,7 +53,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   qGoogle: function(req,res) {
-    const APIkey = "AIzaSyBLvCnaA8i2jiBcWUkOKe7XmacZU972klg"
+    const APIkey = process.env.API_KEY_GOOGLE_BOOKS;
     let query = req.params.name;
     
     axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query + "&Results=20&printType=books&key=" + APIkey)
